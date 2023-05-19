@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News Platform</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mt-4">Recent Urgent News Articles</h1>
+    <div id="newsContainer" class="row justify-content-center mt-4"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    axios.get('/api/news')
+      .then(response => {
+        const newsArticles = response.data;
+        const newsContainer = document.getElementById('newsContainer');
+
+        newsArticles.forEach(article => {
+          const articleElement = document.createElement('div');
+          articleElement.classList.add('article', 'col-md-8', 'mb-4');
+          articleElement.innerHTML = `
+            <h2 class="article-title">${article.title}</h2>
+            <p class="article-content">${article.content}</p>
+          `;
+
+          newsContainer.appendChild(articleElement);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

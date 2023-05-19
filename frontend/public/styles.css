@@ -1,0 +1,30 @@
+/* styles.css */
+.container {
+    background-color: #E2EDF7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article .article-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .article .article-content {
+    color: #666;
+    font-size: 18px;
+  }
+  

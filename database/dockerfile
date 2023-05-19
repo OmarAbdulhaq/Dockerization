@@ -1,0 +1,14 @@
+# Use the official MySQL image as the base image
+FROM mysql:latest
+
+# Set the environment variables for the MySQL database
+ENV MYSQL_DATABASE urgentnews
+ENV MYSQL_USER urgentnews_user
+ENV MYSQL_PASSWORD secret
+ENV MYSQL_ROOT_PASSWORD root
+
+# Copy the init.sql script to the /docker-entrypoint-initdb.d/ directory
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# Expose the default MySQL port
+EXPOSE 3306

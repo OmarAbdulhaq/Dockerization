@@ -1,0 +1,22 @@
+{
+  "name": "urgentnews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo backend is working",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "news",
+    "newspaper",
+    "urgent",
+    "breaking"
+  ],
+  "author": "omarabdulhaq",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
